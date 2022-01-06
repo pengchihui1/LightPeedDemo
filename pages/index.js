@@ -18,7 +18,7 @@ const Home=()=>{
       height: '665',
       width: '1182',
       playerVars: {
-        enablejsapi: 0, //1 则可允许通过 iframe 或 JavaScript Player API 调用来控制播放器。默认值为 0，表示无法使用这些 API 控制播放器。
+        // enablejsapi: 0, //1 则可允许通过 iframe 或 JavaScript Player API 调用来控制播放器。默认值为 0，表示无法使用这些 API 控制播放器。
         autoplay: 1, //取值0和1，自动播放。默认为0。（我自己试了好像不生效，Stack Overflow 上有人说改了）
         cc_load_policy: 0,//值：1。默认根据用户偏好设置确定的。设为1会使系统在默认情况下显示字幕，即使在用户关闭字幕。
         rel: 0,//播放结束后显示相关视频。0 不显示，1 显示。（这个api已经修改为0推荐同频道，1推荐相关）
@@ -43,7 +43,15 @@ const Home=()=>{
     }
   return(
     <div>
-      <p style={{textAlign:"center",fontSize:"20px"}}>簡介：可以觀看到按下按鈕後光在電纜中傳輸的狀況</p>
+      <div style={{textAlign:"left",fontSize:"18px",width:'1182px',margin:"0 auto"}}>
+          <p>簡介：</p>
+          <p>
+              屆時遊戲成品將會有4條燈帶來模擬不同的訊息傳輸速度：2G、3G、4G、5G，目前Demo先以一條燈帶和控制杆來進行演示，在影片中，可以觀看到在按下按鈕後，光在燈帶中的傳輸狀況。
+          </p>
+          <p>
+              控制杆的四個方向分別代表由快至慢的4個傳輸速度，通過比較傳輸速度的不同和LED燈帶的變化，帶出不同傳輸速率對訊息傳輸的影響。
+          </p>
+      </div>
       <div style={{margin:"5px auto",width:"1182px",height:"665px",border:"1px solid black"}}>
       <YouTube videoId={YouTubeGetID('https://www.youtube.com/watch?v=Z0blPWAaaY8')} opts={opts} onReady={e => _onReady(e)} onError={e => _onError(e)} />
       </div>
